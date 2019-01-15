@@ -32,7 +32,7 @@
 "result_xdr":"AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAAGAAAAAAAAAAA="
 }
 ```
-#### POST:/api/account/transfer/
+#### POST:/api/account/payment/
 Производит передачу актива на указанный аккаунт
 
 Поле | Описание
@@ -41,7 +41,7 @@ _to_| адресат: `user1` или `GDJFEBSTPOMTLDVLRRLW37PFUST423KJCRNGG2SUJ6
 _currency_| валюта
 _amount_| кол-во 
 
-**example** `POST:/api/account/transfer/?to=user1&currency=RUB&amount=1`
+**example** `POST:/api/account/payment/?to=user1&currency=RUB&amount=1`
 
 **response**
 ```json
@@ -52,7 +52,7 @@ _amount_| кол-во
 }
 ```
 
-#### POST:/api/account/transfer-path/
+#### POST:/api/account/payment-path/
 Производит передачу с конвертацией в желаемый актив на указанный аккаунт
 
 Поле | Описание
@@ -62,7 +62,7 @@ _currency_| валюта
 _amount_| кол-во 
 _source_currency_| исходная валюта, которую нужно конверитовать
 
-**example** `POST:/api/account/transfer-path/?to=user1&currency=USD&amount=1&source_currency=RUB`
+**example** `POST:/api/account/payment-path/?to=user1&currency=USD&amount=1&source_currency=RUB`
 
 **response**
 ```json
@@ -78,7 +78,17 @@ _source_currency_| исходная валюта, которую нужно ко
 
 **response**
 ```json
-{"success":true,"destinations":["user1"]}
+{"success":true,
+"destinations":[
+    {"name":"user2",
+    "publicKey":"GBNCO6OZHOHLD737QBO5LXQUCL2CFJ5FOLW6YQ53CE77CDLOVZLIWALG",
+    "last_operation":{
+        "hash":"d9b6c5cdf99ea0b0226496c4d587df4a1a6e406d65b450c6b34ce0bf6802103a",
+        "created_at":"2018-11-29T10:58:02Z",
+        "type":"payment"
+        }
+    }]
+}
 ```
 
 #### GET:/api/account/history/payments
