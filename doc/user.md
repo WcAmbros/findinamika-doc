@@ -54,6 +54,8 @@ _password_| пароль
 _login_| логин
 _password_| пароль
 
+**example** `POST:/api/user/update?login=users10&password=users10`
+
 **response**
 ```json
 {"success":true,"message":"update profile"}
