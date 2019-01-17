@@ -45,3 +45,15 @@ _password_| пароль
 ```json
 {"success":true,"message":"logout","token":null}
 ```
+
+#### POST:/api/user/update
+Обновляет данные пользователя по _x-access-token_ токену
+Поле | Описание
+--- | ---
+_login_| логин
+_password_| пароль
+
+**response**
+```json
+{"success":true,"message":"update profile"}
+```
