@@ -53,6 +53,12 @@ _password_| пароль
 --- | ---
 _login_| логин
 _password_| пароль
+_first_name_| Имя
+_last_name_| Фамилия
+_additional_name_| Отчество
+_city_| город
+_address_| адрес
+_email_address_| почта
 
 **example** `POST:/api/user/update?login=users10&password=users10`
 
