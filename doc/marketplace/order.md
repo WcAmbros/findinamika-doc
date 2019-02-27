@@ -7,6 +7,7 @@
 --- | ---
 _page_| страница (опционально)
 _limit_| кол-во записей (опционально)
+_id_| id заказа (опционально, вернет одну в списке)
 
 **example** `GET: /api/marketplace/order`
 
@@ -26,7 +27,6 @@ _limit_| кол-во записей (опционально)
     }]
 }
 ```
-
 
 ### Методы для продавца
 #### GET:/api/marketplace/order/seller/items
@@ -86,29 +86,6 @@ _description_| описание
     }
 }
 ```
-#### GET:/api/marketplace/order/seller/items/:id
-
-Возвращает заказ по id 
-
-**example** `GET: /api/marketplace/order/seller/items/5c66d8a34cb0b7449b43ab73`
-
-**response**
-```json
-{"success":true,
-    "order":{
-        "payed":false,
-        "items":["5c63d06e6b3c802ec1ea83d9"],
-        "price":10.2,
-        "currency":"RUB",
-        "description":"заказ услуги",
-        "seller_id":"5c3db73e5b9e932cc215b9aa",
-        "updated_at":"2019-02-15T15:20:03.282Z",
-        "created_at":"2019-02-15T15:20:03.291Z",
-        "number":2,
-        "id":"5c66d8a34cb0b7449b43ab73"
-    }
-}
-```
 
 #### PUT:/api/marketplace/order/seller/items/:id
 
@@ -139,88 +116,26 @@ _description_| описание
 {"success":true}
 ```
 
+#### POST:/api/marketplace/order/seller/send-order
 
-#### GET:/api/marketplace/order/seller/notice
-
-Возвращает список оплаченных заказов - как уведомления продавцу
-
-**example** `GET: /api/marketplace/order/seller/notice`
-
-**response**
-```json
-{"success":true,
-    "orders":[{
-        "payed":true,
-        "items":["5c63d06e6b3c802ec1ea83d9"],
-        "price":10.2,
-        "currency":"RUB",
-        "description":"заказ услуги",
-        "seller_id":"5c3db73e5b9e932cc215b9aa",
-        "updated_at":"2019-02-15T15:20:03.282Z",
-        "created_at":"2019-02-15T15:20:03.291Z",
-        "number":2,
-        "id":"5c66d8a34cb0b7449b43ab73"
-    }]
-}
-```
-
-#### PUT:/api/marketplace/order/seller/notice/hide
-
-Скрывает из списка уведомления для продавца по id заказа
+Формирует заказ и отправляет уведомление покупателю о заказе
 
 Поле | Описание
 --- | ---
-_id_| id заказа
+_to_| кому (логин покупателя)
+_id_| id сервиса
+_price_| цена
+_currency_| код валюты
+_description_| описание
 
-**example** `PUT: /api/marketplace/order/seller/notice/hide?id=5c66d8a34cb0b7449b43ab73`
+**example** `POST: /api/marketplace/order/seller/items?id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
 
 **response**
 ```json
 {"success":true}
 ```
-
 
 ### Методы для покупателя
-
-
-#### GET:/api/marketplace/order/buyer/notice
-
-Возвращает список оплаченных заказов - как уведомления покупателю
-
-**example** `GET: /api/marketplace/order/seller/notice`
-
-**response**
-```json
-{"success":true,
-    "orders":[{
-        "payed":true,
-        "items":["5c63d06e6b3c802ec1ea83d9"],
-        "price":10.2,
-        "currency":"RUB",
-        "description":"заказ услуги",
-        "seller_id":"5c3db73e5b9e932cc215b9aa",
-        "updated_at":"2019-02-15T15:20:03.282Z",
-        "created_at":"2019-02-15T15:20:03.291Z",
-        "number":2,
-        "id":"5c66d8a34cb0b7449b43ab73"
-    }]
-}
-```
-
-#### PUT:/api/marketplace/order/buyer/notice/hide
-
-Поле | Описание
---- | ---
-_id_| id заказа
-
-Скрывает из списка уведомления для покупателя по id заказа
-
-**example** `PUT: /api/marketplace/order/buyer/notice/hide?id=5c66d8a34cb0b7449b43ab73`
-
-**response**
-```json
-{"success":true}
-```
 
 #### POST:/api/marketplace/order/buyer/payment
 Производит транзакцию оплаты по id заказа

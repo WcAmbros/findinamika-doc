@@ -9,14 +9,7 @@
 --- | ---
 _page_| страница
 _limit_| кол-во элементов на странице  
-
-#### GET:/api/marketplace/service/items
-Выводит список сервисов созданных пользователем (только те что привязаны к нему)
-
-Поле | Описание
---- | ---
-_page_| страница
-_limit_| кол-во элементов на странице
+_id_| id сервиса (опционально, вернет одну в списке)
 
 **example** `GET: /api/marketplace/service/`
 
@@ -29,6 +22,7 @@ _limit_| кол-во элементов на странице
     ]
 }
 ```
+
 #### POST:/api/marketplace/service/items
 Добавляет новый сервис
 
@@ -40,23 +34,6 @@ _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 
 **example** `POST: /api/marketplace/service/items?name=Полировка окон&price=100`
-
-**response**
-```json
-{"success":true,
-"service":{
-    "currency":"RUB",
-    "name":"Полировка окон",
-    "price":100,
-    "timestamp":"2019-02-13T08:55:57.825Z",
-    "id":"5c63db9d66af053466baa618"
-    }
-}
-```
-#### GET:/api/marketplace/service/items/:id
-Возвращает информацию о сервисе
-
-**example** `GET: /api/marketplace/service/items/5c63db9d66af053466baa618`
 
 **response**
 ```json

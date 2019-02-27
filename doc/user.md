@@ -71,21 +71,37 @@ _password_| пароль
 
 #### POST:/api/user/update
 Обновляет данные пользователя по _x-access-token_ токену
-
-Поле | Описание
---- | ---
-_login_| логин
-_password_| пароль
-_first_name_| Имя
-_last_name_| Фамилия
-_additional_name_| Отчество
-_city_| город
-_address_| адрес
-_email_address_| почта
+Поля доступные для обновления описаны выше
 
 **example** `POST:/api/user/update?login=users10&password=users10`
 
 **response**
 ```json
 {"success":true,"message":"update profile"}
+```
+
+#### GET:/api/user/notice
+Выводит список уведомлений пользователя
+
+**response**
+```json
+{"success":true,
+    "notice":[
+        {
+             "type":"order",
+             "message":"send order from seller",
+             "data": {"payed":false,
+                     "items":["5c63d06e6b3c802ec1ea83d9"],
+                     "price":100,
+                     "currency":"RUB",
+                     "description":"тест",
+                     "seller_id":"5c3db73e5b9e932cc215b9aa",
+                     "updated_at":"2019-02-15T10:38:02.517Z",
+                     "created_at":"2019-02-15T10:38:02.523Z",
+                     "number":1,
+                     "id":"5c66968a5084132f85a9a66d"
+             }
+        }
+    ]
+}
 ```
