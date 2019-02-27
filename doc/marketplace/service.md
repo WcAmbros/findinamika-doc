@@ -1,7 +1,7 @@
 ## Методы для работы с service
 
 
-#### GET:/api/marketplace/service/all
+#### GET:/api/marketplace/service/
 
 Выводит весь список сервисов 
 
@@ -10,7 +10,7 @@
 _page_| страница
 _limit_| кол-во элементов на странице  
 
-#### GET:/api/marketplace/service/
+#### GET:/api/marketplace/service/items
 Выводит список сервисов созданных пользователем (только те что привязаны к нему)
 
 Поле | Описание
@@ -29,7 +29,7 @@ _limit_| кол-во элементов на странице
     ]
 }
 ```
-#### POST:/api/marketplace/service/item
+#### POST:/api/marketplace/service/items
 Добавляет новый сервис
 
 Поле | Описание
@@ -39,7 +39,7 @@ _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 
-**example** `POST: /api/marketplace/service/item?name=Полировка окон&price=100`
+**example** `POST: /api/marketplace/service/items?name=Полировка окон&price=100`
 
 **response**
 ```json
@@ -53,10 +53,10 @@ _description_| описание
     }
 }
 ```
-#### GET:/api/marketplace/service/item/:id
+#### GET:/api/marketplace/service/items/:id
 Возвращает информацию о сервисе
 
-**example** `GET: /api/marketplace/service/item/5c63db9d66af053466baa618`
+**example** `GET: /api/marketplace/service/items/5c63db9d66af053466baa618`
 
 **response**
 ```json
@@ -71,7 +71,7 @@ _description_| описание
 }
 ```
 
-#### PUT:/api/marketplace/service/item/:id
+#### PUT:/api/marketplace/service/items/:id
 Обновляет информацию о сервисе
 
 Поле | Описание
@@ -81,17 +81,17 @@ _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 
-**example** `PUT: /api/marketplace/service/item/5c63db9d66af053466baa618?price=250.50`
+**example** `PUT: /api/marketplace/service/items/5c63db9d66af053466baa618?price=250.50`
 
 **response**
 ```json
 {"success":true,"message":"confirm"}
 ```
 
-#### DELETE:/api/marketplace/service/item/:id
+#### DELETE:/api/marketplace/service/items/:id
 Удаляет сервис
 
-**example** `DELETE: /api/marketplace/service/item/5c63db9d66af053466baa618`
+**example** `DELETE: /api/marketplace/service/items/5c63db9d66af053466baa618`
 
 **response**
 ```json

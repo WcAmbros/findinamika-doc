@@ -29,7 +29,7 @@ _limit_| кол-во записей (опционально)
 
 
 ### Методы для продавца
-#### GET:/api/marketplace/order/seller/item
+#### GET:/api/marketplace/order/seller/items
 Возвращает список заказов, сформированные продавцом
 
 Поле | Описание
@@ -37,7 +37,7 @@ _limit_| кол-во записей (опционально)
 _page_| страница (опционально)
 _limit_| кол-во записей (опционально)
 
-**example** `GET: /api/marketplace/order/seller/item`
+**example** `GET: /api/marketplace/order/seller/items`
 
 **response**
 ```json
@@ -56,7 +56,7 @@ _limit_| кол-во записей (опционально)
 }
 ```
 
-#### POST:/api/marketplace/order/seller/item
+#### POST:/api/marketplace/order/seller/items
 
 Добавляет новую запись 
 
@@ -67,7 +67,7 @@ _price_| цена
 _currency_| код валюты
 _description_| описание
 
-**example** `POST: /api/marketplace/order/seller/item?id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
+**example** `POST: /api/marketplace/order/seller/items?id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
 
 **response**
 ```json
@@ -86,11 +86,11 @@ _description_| описание
     }
 }
 ```
-#### GET:/api/marketplace/order/seller/item/:id
+#### GET:/api/marketplace/order/seller/items/:id
 
 Возвращает заказ по id 
 
-**example** `GET: /api/marketplace/order/seller/item/5c66d8a34cb0b7449b43ab73`
+**example** `GET: /api/marketplace/order/seller/items/5c66d8a34cb0b7449b43ab73`
 
 **response**
 ```json
@@ -110,7 +110,7 @@ _description_| описание
 }
 ```
 
-#### PUT:/api/marketplace/order/seller/item/:id
+#### PUT:/api/marketplace/order/seller/items/:id
 
 Обновляет данные заказа, если он еще не оплачен 
 
@@ -121,18 +121,18 @@ _price_| цена
 _currency_| код валюты
 _description_| описание
 
-**example** `PUT: /api/marketplace/order/seller/item/5c66d8a34cb0b7449b43ab73`
+**example** `PUT: /api/marketplace/order/seller/items/5c66d8a34cb0b7449b43ab73`
 
 **response**
 ```json
 {"success":true}
 ```
 
-#### DELETE:/api/marketplace/order/seller/item/:id
+#### DELETE:/api/marketplace/order/seller/items/:id
 
 Удаляет заказ по его id, если он еще не оплачен  
 
-**example** `DELETE: /api/marketplace/order/seller/item/5c66d8a34cb0b7449b43ab73`
+**example** `DELETE: /api/marketplace/order/seller/items/5c66d8a34cb0b7449b43ab73`
 
 **response**
 ```json
