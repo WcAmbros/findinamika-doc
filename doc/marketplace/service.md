@@ -18,7 +18,7 @@ _limit_| кол-во элементов на странице
 _page_| страница
 _limit_| кол-во элементов на странице
 
-**example** `GET :/api/marketplace/service/`
+**example** `GET: /api/marketplace/service/`
 
 **response**
 ```json
@@ -29,7 +29,7 @@ _limit_| кол-во элементов на странице
     ]
 }
 ```
-#### POST:/api/marketplace/service/
+#### POST:/api/marketplace/service/item
 Добавляет новый сервис
 
 Поле | Описание
@@ -37,8 +37,9 @@ _limit_| кол-во элементов на странице
 _name_| Наименование 
 _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
+_description_| описание
 
-**example** `POST :/api/marketplace/service/?name=Полировка окон&price=100`
+**example** `POST: /api/marketplace/service/item?name=Полировка окон&price=100`
 
 **response**
 ```json
@@ -55,7 +56,7 @@ _currency_| валюта (по умолчанию, RUB)
 #### GET:/api/marketplace/service/item/:id
 Возвращает информацию о сервисе
 
-**example** `GET :/api/marketplace/service/item/5c63db9d66af053466baa618`
+**example** `GET: /api/marketplace/service/item/5c63db9d66af053466baa618`
 
 **response**
 ```json
@@ -78,8 +79,9 @@ _currency_| валюта (по умолчанию, RUB)
 _name_| Наименование 
 _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
+_description_| описание
 
-**example** `PUT :/api/marketplace/service/item/5c63db9d66af053466baa618?price=250.50`
+**example** `PUT: /api/marketplace/service/item/5c63db9d66af053466baa618?price=250.50`
 
 **response**
 ```json
@@ -89,7 +91,7 @@ _currency_| валюта (по умолчанию, RUB)
 #### DELETE:/api/marketplace/service/item/:id
 Удаляет сервис
 
-**example** `DELETE :/api/marketplace/service/item/5c63db9d66af053466baa618`
+**example** `DELETE: /api/marketplace/service/item/5c63db9d66af053466baa618`
 
 **response**
 ```json
@@ -104,7 +106,7 @@ _currency_| валюта (по умолчанию, RUB)
 --- | ---
 _search_| строка поиска  
 
-**example** `GET :/api/marketplace/service/search?search=мытье`
+**example** `GET: /api/marketplace/service/search?search=мытье`
 
 **response**
 ```json

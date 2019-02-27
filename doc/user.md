@@ -2,6 +2,29 @@
 Методы для регистраиции и авторизации пользователя. Выдает 
 _x-access-token_, который для дальнейшего доступа к API. _x-access-token_ добавляется в headers при отправке запроса 
 
+Для профиля пользователя доступны следующие поля, поля приведены к спецификации [sep-0009](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0009.md)
+
+Поле | Тип| Описание
+--- | --- | ---
+_login_| String| логин
+_password_| String| пароль
+_first_name_| String| Имя
+_last_name_| String| Фамилия
+_birth_date_| Date| Дата рождения (1988-02-22)
+_mobile_number_| String| Мобильный номер ([E.164](https://en.wikipedia.org/wiki/E.164))
+_country_| String| Страна
+_city_| String| Город
+_address_| String| Адрес
+_email_address_| String| email
+_id_type_| String| тип удостверяющего документа (паспорт или др.)
+_id_number_| String| номер документа (паспорта)
+_id_issue_date_| String| дата выдачи документа (паспорта)
+_photo_id_front_| Binary| фото передней части документа
+_photo_id_back_| Binary| фото оборотной стороны документа
+_allow_geolocation_| Boolean| Разрешение на отслеживание геолокации
+_allow_notice_| Boolean| Разрешение высылать уведомления
+_allow_personal_data_| Boolean| Разрешение на обработку данных
+
 #### POST:/api/user/login
 Авторизует пользователя и возвращает _x-access-token_ на 24 часа. 
 
