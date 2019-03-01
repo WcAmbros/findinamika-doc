@@ -16,9 +16,39 @@ _id_| id сервиса (опционально, вернет одну в спи
 **response**
 ```json
 {"success":true,
-    "services":[
-    {"currency":"RUB","name":"полировка","price":100.2,"timestamp":"2019-02-13T08:08:14.364Z","id":"5c63d06e6b3c802ec1ea83d9"},
-    {"currency":"RUB","name":"мытье","price":100.22,"timestamp":"2019-02-13T08:08:42.158Z","id":"5c63d08a6b3c802ec1ea83da"}
+"services":[
+    {"currency":"RUB",
+    "name":"Полировка окон",
+    "price":2,"description":"услуга по полировке окон",
+    "timestamp":"2019-02-28T08:57:42.231Z",
+    "id":"5c77a286cc34b95a17bdfa8d",
+    "seller":{"id":"5c779fdc949ce0589f099caf","login":"rub3@findinamika.com"}}
+    ]
+}
+```
+
+
+#### GET:/api/marketplace/service/items
+
+Выводит весь список сервисов созданных продавцом
+
+Поле | Описание
+--- | ---
+_page_| страница
+_limit_| кол-во элементов на странице  
+
+**example** `GET: /api/marketplace/service/items`
+
+**response**
+```json
+{"success":true,
+"services":[
+    {"currency":"RUB",
+    "name":"Полировка окон",
+    "price":2,"description":"услуга по полировке окон",
+    "timestamp":"2019-02-28T08:57:42.231Z",
+    "id":"5c77a286cc34b95a17bdfa8d",
+    "user_id":"5c779fdc949ce0589f099caf"}
     ]
 }
 ```
@@ -89,10 +119,13 @@ _search_| строка поиска
 ```json
 {"success":true,
     "services":[
-        {"currency":"RUB","name":"мытье","price":100.22,"timestamp":"2019-02-13T08:08:42.158Z","id":"5c63d08a6b3c802ec1ea83da"}
+        {"currency":"RUB",
+        "name":"мытье",
+        "price":100.22,
+        "timestamp":"2019-02-13T08:08:42.158Z",
+        "id":"5c63d08a6b3c802ec1ea83da",
+        "seller":{"id":"5c779fdc949ce0589f099caf","login":"rub3@findinamika.com"}}
+        }
     ]
 }
 ```
-
-
-
