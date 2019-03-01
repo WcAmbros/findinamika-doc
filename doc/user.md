@@ -105,3 +105,15 @@ _password_| пароль
     ]
 }
 ```
+
+#### GET:/api/user/info/:id
+
+Выводит информацию о пользователе
+```json
+{"success":true,
+    "user":{
+        "id":"5c77a80517d94e5d0afaf88d",
+        "login":"user1@findinamika.com"
+        }
+}
+```
