@@ -171,3 +171,36 @@ _currency_| код валюты
 _description_| описание
 
 **example** `POST: /api/marketplace/order/buyer/payment/service?id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
+
+#### GET:/api/marketplace/order/buyer/items
+Возвращает список заказов для покупателя
+
+Поле | Описание
+--- | ---
+_page_| страница (опционально)
+_limit_| кол-во записей (опционально)
+
+**example** `GET: /api/marketplace/order/buyer/items`
+
+**response**
+```json
+{"payed":false,
+    "items":[
+        {"currency":"RUB",
+        "name":"Полировка окон",
+        "price":2,
+        "description":"услуга по полировке окон",
+        "user_id":"5c779fdc949ce0589f099caf",
+        "timestamp":"2019-02-28T08:57:42.231Z",
+        "id":"5c77a286cc34b95a17bdfa8d"}
+        ],
+    "price":3,
+    "currency":"RUB",
+    "description":"тестовый заказ",
+    "updated_at":"2019-02-28T09:26:08.970Z",
+    "created_at":"2019-02-28T09:26:08.974Z",
+    "number":3,
+    "id":"5c77a93087a3e85f32ccd986",
+    "seller":{"id":"5c779fdc949ce0589f099caf","login":"rub3@findinamika.com"}
+    }
+```
