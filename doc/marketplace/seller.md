@@ -1,6 +1,6 @@
 ## Методы для покупателя
 
-#### GET:/api/marketplace/buyer/orders
+#### GET:/api/marketplace/seller/orders
 Возвращает список заказов покупателя
 
 Поле | Описание
@@ -8,7 +8,7 @@
 _page_| страница (опционально)
 _limit_| кол-во записей (опционально)
 
-**example** `GET: /api/marketplace/buyer/orders`
+**example** `GET: /api/marketplace/seller/orders`
 
 **response**
 ```json
