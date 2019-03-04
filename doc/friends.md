@@ -24,7 +24,7 @@ _id_| id пользователя (опционально)
 _login_| login пользователя
 
 
-**example** `POST :/api/friends?login=user1@findinamika.com`
+**example** `POST :/api/friends/add-by-login?login=user1@findinamika.com`
 
 **response**
 ```json
