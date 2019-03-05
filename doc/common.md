@@ -15,3 +15,7 @@
 ]
 }
 ```
+
+#### GET:/api/uploads/:filename
+
+Возвращает файл

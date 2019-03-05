@@ -19,8 +19,9 @@ _email_address_| String| email
 _id_type_| String| тип удостверяющего документа (паспорт или др.)
 _id_number_| String| номер документа (паспорта)
 _id_issue_date_| String| дата выдачи документа (паспорта)
-_photo_id_front_| Binary| фото передней части документа
-_photo_id_back_| Binary| фото оборотной стороны документа
+_photo_id_front_| File| фото передней части документа
+_photo_id_back_| File| фото оборотной стороны документа
+_avatar_| File| аватарка пользователя
 _allow_geolocation_| Boolean| Разрешение на отслеживание геолокации
 _allow_notice_| Boolean| Разрешение высылать уведомления
 _allow_personal_data_| Boolean| Разрешение на обработку данных
@@ -117,3 +118,12 @@ _password_| пароль
         }
 }
 ```
+
+#### GET:/api/user/photo/front
+
+Изображение передней части удостоверения личности (паспорт)
+
+#### GET:/api/user/photo/back
+
+Изображение оборотной стороны удостоверения личности (паспорт)
+
