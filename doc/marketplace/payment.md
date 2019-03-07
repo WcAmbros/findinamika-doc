@@ -33,16 +33,13 @@ _id_| id заказа
 ```
 
 #### POST:/api/marketplace/payment/service
-Формирует заказ и производит транзакцию оплаты по заказу
+Формирует заказ и производит транзакцию оплаты по сервису
 
 Поле | Описание
 --- | ---
 _id_| id сервиса
-_price_| цена
-_currency_| код валюты
-_description_| описание
 
-**example** `POST: /api/marketplace/payment/service?id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
+**example** `POST: /api/marketplace/payment/service?id=5c63d06e6b3c802ec1ea83d9`
 
 {"success":true,
     "order":{
@@ -51,7 +48,7 @@ _description_| описание
             "ledger":"84361"
             },
         "payed":true,
-        "items":[null],
+        "items":[5c63d06e6b3c802ec1ea83d9],
         "price":10,
         "currency":"RUB",
         "description":"На пиво",
