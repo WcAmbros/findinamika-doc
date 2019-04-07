@@ -40,6 +40,7 @@
 _to_| адресат: `user1` или `GDJFEBSTPOMTLDVLRRLW37PFUST423KJCRNGG2SUJ6FABHEU5R3TO2V6`
 _currency_| валюта
 _amount_| кол-во 
+_memo_| комментарий
 
 **example** `POST:/api/account/payment/?to=user1&currency=RUB&amount=1`
 
@@ -61,6 +62,7 @@ _to_| адресат: `user1` или `GDJFEBSTPOMTLDVLRRLW37PFUST423KJCRNGG2SUJ6
 _currency_| валюта
 _amount_| кол-во 
 _source_currency_| исходная валюта, которую нужно конверитовать
+_memo_| комментарий
 
 **example** `POST:/api/account/payment-path/?to=user1&currency=USD&amount=1&source_currency=RUB`
 
