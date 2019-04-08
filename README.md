@@ -15,4 +15,4 @@
 1. [marketplace/seller](/doc/marketplace/seller.md) - методы для продавца
 
 
-сервер:  https://api.findinamika.com/api/
+сервер:  http://api.findinamika.com/api/
