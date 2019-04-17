@@ -62,6 +62,7 @@ _name_| Наименование
 _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
 _description_| описание
+_label_id_| id товарного знака
 
 **example** `POST: /api/marketplace/service/items?name=Полировка окон&price=100`
 
@@ -87,6 +88,7 @@ _name_| Наименование
 _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
 _description_| описание
+_label_id_| id товарного знака
 
 **example** `PUT: /api/marketplace/service/items/5c63db9d66af053466baa618?price=250.50`
 
