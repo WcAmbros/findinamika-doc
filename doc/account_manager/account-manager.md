@@ -3,7 +3,6 @@
 #### POST:/api/account-manager/authorize/
 Авторизация как менеджер
 
-
 Поле | Описание
 --- | ---
 _id_| id
@@ -41,13 +40,13 @@ _clientSecret_| секретное слово (выдан менеджеру)
 }
 ```
 
-#### POST:/api/account-manager/create/user
+#### AUTH POST:/api/account-manager/create/user
 создание нового пользователя (привязка к менеджеру)
 
 Поля описаны в [user](/doc/profile/user.md)
 
 
-**example** `POST /api/account-manager/create/user`
+**example** `AUTH POST /api/account-manager/create/user`
 
 **response**
 ```json

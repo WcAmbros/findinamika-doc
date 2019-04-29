@@ -62,7 +62,7 @@ _password_| пароль
 }
 ```
 
-#### GET:/api/user/logout
+#### AUTH GET:/api/user/logout
 Выход из системы, токен _x-access-token_ анулируется
 
 **response**
@@ -70,18 +70,18 @@ _password_| пароль
 {"success":true,"message":"logout","token":null}
 ```
 
-#### POST:/api/user/update
+#### AUTH POST:/api/user/update
 Обновляет данные пользователя по _x-access-token_ токену
 Поля доступные для обновления описаны выше
 
-**example** `POST:/api/user/update?login=users10&password=users10`
+**example** `AUTH POST:/api/user/update?login=users10&password=users10`
 
 **response**
 ```json
 {"success":true,"message":"update profile"}
 ```
 
-#### GET:/api/user/notice
+#### AUTH GET:/api/user/notice
 Выводит список уведомлений пользователя
 
 **response**
@@ -119,11 +119,11 @@ _password_| пароль
 }
 ```
 
-#### GET:/api/user/photo/front
+#### AUTH GET:/api/user/photo/front
 
 Изображение передней части удостоверения личности (паспорт)
 
-#### GET:/api/user/photo/back
+#### AUTH GET:/api/user/photo/back
 
 Изображение оборотной стороны удостоверения личности (паспорт)
 

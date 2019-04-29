@@ -15,5 +15,11 @@
 1. [marketplace/buyer](/doc/marketplace/buyer.md) - методы для покупателя
 1. [marketplace/seller](/doc/marketplace/seller.md) - методы для продавца
 
-
+## Сервер
 сервер:  http://api.findinamika.com/api/
+
+## Запросы
+
+1. GET /api/account - запрос без авторизации токена
+
+1. AUTH GET /api/account - требует авторизацию по токену

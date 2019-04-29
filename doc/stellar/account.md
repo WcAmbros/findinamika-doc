@@ -1,6 +1,6 @@
 ## Методы
 
-#### GET:/api/account/
+#### AUTH GET:/api/account/
 Возвращает сведения об аккаунте stellar
 
 **response**
@@ -19,10 +19,10 @@
 }
 ```
 
-#### POST:/api/account/trustline/:asset_code/
+#### AUTH POST:/api/account/trustline/:asset_code/
 Добавляет актив в баланс, создав доверительную линию эмитентом(анкором)
 
-**example** `POST:/api/account/trustline/RUB`
+**example** `AUTH POST:/api/account/trustline/RUB`
 
 **response**
 ```json
@@ -32,7 +32,7 @@
 "result_xdr":"AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAAGAAAAAAAAAAA="
 }
 ```
-#### POST:/api/account/payment/
+#### AUTH POST:/api/account/payment/
 Производит передачу актива на указанный аккаунт
 
 Поле | Описание
@@ -42,7 +42,7 @@ _currency_| валюта
 _amount_| кол-во 
 _memo_| комментарий
 
-**example** `POST:/api/account/payment/?to=user1&currency=RUB&amount=1`
+**example** `AUTH POST:/api/account/payment/?to=user1&currency=RUB&amount=1`
 
 **response**
 ```json
@@ -53,7 +53,7 @@ _memo_| комментарий
 }
 ```
 
-#### POST:/api/account/payment-path/
+#### AUTH POST:/api/account/payment-path/
 Производит передачу с конвертацией в желаемый актив на указанный аккаунт
 
 Поле | Описание
@@ -64,7 +64,7 @@ _amount_| кол-во
 _source_currency_| исходная валюта, которую нужно конверитовать
 _memo_| комментарий
 
-**example** `POST:/api/account/payment-path/?to=user1&currency=USD&amount=1&source_currency=RUB`
+**example** `AUTH POST:/api/account/payment-path/?to=user1&currency=USD&amount=1&source_currency=RUB`
 
 **response**
 ```json
@@ -75,7 +75,7 @@ _memo_| комментарий
 }
 ```
 
-#### GET:/api/account/history/destinations
+#### AUTH GET:/api/account/history/destinations
 Возвращает список кому перечислял
 
 **response**
@@ -93,7 +93,7 @@ _memo_| комментарий
 }
 ```
 
-#### GET:/api/account/history/payments
+#### AUTH GET:/api/account/history/payments
 Возвращает историю транзакций
 
 **response**
