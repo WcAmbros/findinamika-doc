@@ -28,7 +28,7 @@ _id_| id сервиса (опционально, вернет одну в спи
 ```
 
 
-#### GET:/api/marketplace/service/items
+#### AUTH GET:/api/marketplace/service/items
 
 Выводит весь список сервисов созданных продавцом
 
@@ -37,7 +37,7 @@ _id_| id сервиса (опционально, вернет одну в спи
 _page_| страница
 _limit_| кол-во элементов на странице  
 
-**example** `GET: /api/marketplace/service/items`
+**example** `AUTH GET: /api/marketplace/service/items`
 
 **response**
 ```json
@@ -53,7 +53,7 @@ _limit_| кол-во элементов на странице
 }
 ```
 
-#### POST:/api/marketplace/service/items
+#### AUTH POST:/api/marketplace/service/items
 Добавляет новый сервис
 
 Поле | Описание
@@ -64,7 +64,7 @@ _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 _label_id_| id товарного знака
 
-**example** `POST: /api/marketplace/service/items?name=Полировка окон&price=100`
+**example** `AUTH POST: /api/marketplace/service/items?name=Полировка окон&price=100`
 
 **response**
 ```json
@@ -79,7 +79,7 @@ _label_id_| id товарного знака
 }
 ```
 
-#### PUT:/api/marketplace/service/items/:id
+#### AUTH PUT:/api/marketplace/service/items/:id
 Обновляет информацию о сервисе
 
 Поле | Описание
@@ -90,17 +90,17 @@ _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 _label_id_| id товарного знака
 
-**example** `PUT: /api/marketplace/service/items/5c63db9d66af053466baa618?price=250.50`
+**example** `AUTH PUT: /api/marketplace/service/items/5c63db9d66af053466baa618?price=250.50`
 
 **response**
 ```json
 {"success":true,"message":"confirm"}
 ```
 
-#### DELETE:/api/marketplace/service/items/:id
+#### AUTH DELETE:/api/marketplace/service/items/:id
 Удаляет сервис
 
-**example** `DELETE: /api/marketplace/service/items/5c63db9d66af053466baa618`
+**example** `AUTH DELETE: /api/marketplace/service/items/5c63db9d66af053466baa618`
 
 **response**
 ```json

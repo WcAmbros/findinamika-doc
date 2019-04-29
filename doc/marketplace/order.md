@@ -35,7 +35,7 @@ _id_| id заказа (опционально, вернет одну в спис
 ```
 
 ### Методы для продавца
-#### POST:/api/marketplace/order/items
+#### AUTH POST:/api/marketplace/order/items
 
 Добавляет новую запись 
 
@@ -47,7 +47,7 @@ _price_| цена
 _currency_| код валюты
 _description_| описание
 
-**example** `POST: /api/marketplace/order/items?id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
+**example** `AUTH POST: /api/marketplace/order/items?id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
 
 **response**
 ```json
@@ -68,7 +68,7 @@ _description_| описание
 }
 ```
 
-#### PUT:/api/marketplace/order/items/:id
+#### AUTH PUT:/api/marketplace/order/items/:id
 
 Обновляет данные заказа, если он еще не оплачен 
 
@@ -79,25 +79,25 @@ _price_| цена
 _currency_| код валюты
 _description_| описание
 
-**example** `PUT: /api/marketplace/order/items/5c66d8a34cb0b7449b43ab73`
+**example** `AUTH PUT: /api/marketplace/order/items/5c66d8a34cb0b7449b43ab73`
 
 **response**
 ```json
 {"success":true}
 ```
 
-#### DELETE:/api/marketplace/order/items/:id
+#### AUTH DELETE:/api/marketplace/order/items/:id
 
 Удаляет заказ по его id, если он еще не оплачен  
 
-**example** `DELETE: /api/marketplace/order/items/5c66d8a34cb0b7449b43ab73`
+**example** `AUTH DELETE: /api/marketplace/order/items/5c66d8a34cb0b7449b43ab73`
 
 **response**
 ```json
 {"success":true}
 ```
 
-#### POST:/api/marketplace/order/send
+#### AUTH POST:/api/marketplace/order/send
 
 Формирует заказ и отправляет уведомление покупателю о заказе
 
@@ -109,7 +109,7 @@ _price_| цена
 _currency_| код валюты
 _description_| описание
 
-**example** `POST: /api/marketplace/order/send?to=user1&id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
+**example** `AUTH POST: /api/marketplace/order/send?to=user1&id=5c63d06e6b3c802ec1ea83d9&price=10.20&currency=RUB&description=заказ услуги`
 
 **response**
 ```json

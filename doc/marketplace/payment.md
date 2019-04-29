@@ -1,13 +1,13 @@
 ## Методы для оплаты заказов
 
-#### POST:/api/marketplace/payment
+#### AUTH POST:/api/marketplace/payment
 Производит транзакцию оплаты по id заказа
 
 Поле | Описание
 --- | ---
 _id_| id заказа 
 
-**example** `POST: /api/marketplace/payment?id=5c66d8a34cb0b7449b43ab73`
+**example** `AUTH POST: /api/marketplace/payment?id=5c66d8a34cb0b7449b43ab73`
 
 **response**
 ```json
@@ -32,14 +32,14 @@ _id_| id заказа
 }
 ```
 
-#### POST:/api/marketplace/payment/service
+#### AUTH POST:/api/marketplace/payment/service
 Формирует заказ и производит транзакцию оплаты по сервису
 
 Поле | Описание
 --- | ---
 _id_| id сервиса
 
-**example** `POST: /api/marketplace/payment/service?id=5c63d06e6b3c802ec1ea83d9`
+**example** `AUTH POST: /api/marketplace/payment/service?id=5c63d06e6b3c802ec1ea83d9`
 
 {"success":true,
     "order":{
