@@ -1,9 +1,10 @@
 
 #API методов
 
-1. [account](/doc/stellar/account.md)  -  методы для работы с аккаунтом
-1. [anchor](/doc/stellar/anchor.md)  - работа для анкоров (схож с аккаунтом)
 1. [user](/doc/profile/user.md) -  регистрация и авторизация пользователя
+1. [anchor](/doc/stellar/anchor.md)  - работа для анкоров (схож с аккаунтом)
+1. [account](/doc/stellar/account.md)  -  методы для работы с аккаунтом
+1. [account-manager](/doc/account-manager/account-manager.md) -  методы для работы менеджера
 
 
 ## для работы с marketplace
