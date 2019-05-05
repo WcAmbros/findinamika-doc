@@ -34,7 +34,7 @@ _description_| описание актива
 #### AUTH POST:/api/anchor/:currency/mint
 выпускает некоторое кол-ва актива
 
-**example** `AUTH POST http://localhost:4000/api/anchor/mint/?amount=100`
+**example** `AUTH POST /api/anchor/mint/?amount=100`
 
 Поле | Описание
 --- | ---
