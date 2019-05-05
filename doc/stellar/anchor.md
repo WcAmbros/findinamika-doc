@@ -1,16 +1,15 @@
 ## Методы
 
-#### AUTH POST:/api/anchor/manage-offer/
+#### AUTH POST:/api/anchor/:currency/manage-offer/
 Позволяет выставить актив на продажу создав пару
 
 Поле | Описание
 --- | ---
-_selling_| валюта для продажи
 _buying_| валюта для покупки
 _amount_| кол-во покупаемой валюты
 _price_| цена покупаемой валюты
 
-**example** `AUTH POST /api/anchor/manage-offer/?selling=BLK&buying=RUB&amount=100&price=10`
+**example** `AUTH POST /api/anchor/:currency/manage-offer/?buying=RUB&amount=100&price=10`
 
 **response**
 ```json
@@ -21,7 +20,7 @@ _price_| цена покупаемой валюты
 }
 ```
 
-#### AUTH POST:/api/anchor/create/
+#### AUTH POST:/api/anchor/:currency/create/
 Создает нового владельца актива (эмитент), а также создает новый актив.
 
 **example** `AUTH POST /api/anchor/create/?asset_code=RUB&description=ruble`
@@ -32,7 +31,7 @@ _asset_code_| код актива ([see](https://www.stellar.org/developers/guid
 _description_| описание актива
 
 
-#### AUTH POST:/api/anchor/mint
+#### AUTH POST:/api/anchor/:currency/mint
 выпускает некоторое кол-ва актива
 
 **example** `AUTH POST http://localhost:4000/api/anchor/mint/?amount=100`
@@ -42,7 +41,7 @@ _description_| описание актива
 _amount_| кол-во
 
 
-#### AUTH POST:/api/anchor/burn
+#### AUTH POST:/api/anchor/:currency/burn
 сжигает некоторое кол-ва актива
 
 **example** `AUTH POST /api/anchor/burn/?amount=100`
