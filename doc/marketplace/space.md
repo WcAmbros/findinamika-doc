@@ -1,7 +1,7 @@
 ## Методы для работы с space
 
 
-#### AUTH GET:/api/marketplace/space/
+#### GET:/api/marketplace/space/
 
 Выводит весь список товарных знаков созданных владельцем 
 
@@ -11,7 +11,7 @@ _page_| страница
 _limit_| кол-во элементов на странице  
 _id_| id сервиса (опционально, вернет одну в списке)
 
-**example** `AUTH GET: /api/marketplace/space/`
+**example** `GET: /api/marketplace/space/`
 
 **response**
 ```json
