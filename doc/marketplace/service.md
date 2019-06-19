@@ -63,6 +63,7 @@ _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 _label_id_| id товарного знака
+_space_id_| id space
 _image_| изображение (файл)
 
 **example** `AUTH POST: /api/marketplace/service/items?name=Полировка окон&price=100`
