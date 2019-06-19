@@ -63,6 +63,7 @@ _price_| цена (формат: 999.99 )
 _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 _label_id_| id товарного знака
+_image_| изображение (файл)
 
 **example** `AUTH POST: /api/marketplace/service/items?name=Полировка окон&price=100`
 
@@ -90,6 +91,7 @@ _currency_| валюта (по умолчанию, RUB)
 _description_| описание
 _label_id_| id товарного знака
 _space_id_| id space
+_image_| изображение (файл)
 
 **example** `AUTH PUT: /api/marketplace/service/items/5c63db9d66af053466baa618?price=250.50`
 
@@ -127,7 +129,7 @@ _search_| строка поиска
         "price":100.22,
         "timestamp":"2019-02-13T08:08:42.158Z",
         "id":"5c63d08a6b3c802ec1ea83da",
-        "seller":{"id":"5c779fdc949ce0589f099caf","login":"rub3@findinamika.com"}}
+        "seller":{"id":"5c779fdc949ce0589f099caf","login":"rub3@findinamika.com"}
         }
     ]
 }
