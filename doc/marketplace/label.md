@@ -1,7 +1,7 @@
 ## Методы для работы с label
 
 
-#### AUTH GET:/api/marketplace/label/
+#### GET:/api/marketplace/label/
 
 Выводит весь список товарных знаков созданных владельцем 
 
@@ -11,7 +11,7 @@ _page_| страница
 _limit_| кол-во элементов на странице  
 _id_| id сервиса (опционально, вернет одну в списке)
 
-**example** `AUTH GET: /api/marketplace/label/`
+**example** `GET: /api/marketplace/label/`
 
 **response**
 ```json

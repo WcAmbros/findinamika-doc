@@ -17,10 +17,11 @@
 1. [marketplace/seller](/doc/marketplace/seller.md) - методы для продавца
 
 ## Сервер
-сервер:  http://api.findinamika.com/api/
+сервер:  https://api.findinamika.com/api/
+dev - сервер:  https://dev.findinamika.com/api/
 
 ## Запросы
 
 1. GET /api/account - запрос без авторизации токена
 
-1. AUTH GET /api/account - требует авторизацию по токену
+1. AUTH GET /api/account - требует авторизацию по токену x-access-token. Токен добавляется в headers при отправке запроса 

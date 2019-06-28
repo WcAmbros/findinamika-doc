@@ -1,7 +1,5 @@
 ## Методы
-Методы для регистраиции и авторизации пользователя. Выдает 
-_x-access-token_, который для дальнейшего доступа к API. _x-access-token_ добавляется в headers при отправке запроса 
-
+Методы для регистраиции и авторизации пользователя. 
 Для профиля пользователя доступны следующие поля, поля приведены к спецификации [sep-0009](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0009.md)
 
 Поле | Тип| Описание
@@ -16,6 +14,7 @@ _country_| String| Страна
 _city_| String| Город
 _address_| String| Адрес
 _email_address_| String| email
+_about_| String| О себе
 _id_type_| String| тип удостверяющего документа (паспорт или др.)
 _id_number_| String| номер документа (паспорта)
 _id_issue_date_| String| дата выдачи документа (паспорта)
