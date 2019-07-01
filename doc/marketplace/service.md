@@ -82,7 +82,7 @@ _image_| изображение (файл)
 }
 ```
 
-#### AUTH PUT:/api/marketplace/service/items/:id
+#### AUTH POST:/api/marketplace/service/items/:id
 Обновляет информацию о сервисе
 
 Поле | Описание
@@ -96,7 +96,7 @@ _space_| space
 _measure_| ед. измерения
 _image_| изображение (файл)
 
-**example** `AUTH PUT: /api/marketplace/service/items/5c63db9d66af053466baa618?price=250.50`
+**example** `AUTH POST: /api/marketplace/service/items/5c63db9d66af053466baa618?price=250.50`
 
 **response**
 ```json
