@@ -25,4 +25,4 @@ dev - сервер:  https://dev.findinamika.com/api/
 
 1. GET /api/account - запрос без авторизации токена
 
-1. AUTH GET /api/account - требует авторизацию по токену x-access-token. Токен добавляется в headers при отправке запроса 
+1. AUTH GET /api/account - требует авторизацию по токену `Authorization` (Bearer Authentication). Токен добавляется в headers при отправке запроса 
