@@ -19,7 +19,7 @@
 
 ## Сервер
 сервер:  https://api.findinamika.com/api/
-dev - сервер:  https://dev.findinamika.com/api/
+
 
 ## Запросы
 
