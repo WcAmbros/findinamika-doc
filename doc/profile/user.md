@@ -126,3 +126,43 @@ _password_| пароль
 
 Изображение оборотной стороны удостоверения личности (паспорт)
 
+####  POST:/api/user/reset/verify-code
+
+Отправка кода проверки по email
+
+
+Поле | Тип| Описание
+--- | --- | ---
+_email_address_| String| email
+
+
+**example** `POST:/api.findinamika.com/api/user/reset/verify-code?email_address=admin@findinamika.com`
+
+**response**
+```json
+{
+  "success": true,
+  "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMTA5ZDY1Y2QzMzVjNjhjYTM5OWVmMyIsImxvZ2luIjoic3RhcyIsImVtYWlsX2FkZHJlc3MiOiJ6YWhzODhAeWFuZGV4LnJ1IiwidmVyaWZ5Q29kZSI6IjcwMjA3NzciLCJleHBpcmVzIjoxODAsImlhdCI6MTU2NjMwMTg2NywiZXhwIjoxNTY2MzAyMDQ3fQ.UhfYBJNdLv-nXI50Z_s2Xd3ug_z-VJP-KEQKhsDUpn8",
+  "expires": 180
+}
+```
+
+####  POST:/api/user/reset/password
+
+Сброс пароля и отправка на почту
+
+Поле | Тип| Описание
+--- | --- | ---
+_resetToken_| String| token
+_verifyCode_| String| verify code 
+
+
+**example** `POST:/api.findinamika.com/api/user/reset/password?verifyCode=7020777&resetToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMTA5ZDY1Y2QzMzVjNjhjYTM5OWVmMyIsImxvZ2luIjoic3RhcyIsImVtYWlsX2FkZHJlc3MiOiJ6YWhzODhAeWFuZGV4LnJ1IiwidmVyaWZ5Q29kZSI6IjcwMjA3NzciLCJleHBpcmVzIjoxODAsImlhdCI6MTU2NjMwMTg2NywiZXhwIjoxNTY2MzAyMDQ3fQ.UhfYBJNdLv-nXI50Z_s2Xd3ug_z-VJP-KEQKhsDUpn8`
+
+**response**
+```json
+{
+  "success": true,
+  "message": "send new password to email"
+}
+```
