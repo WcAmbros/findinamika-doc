@@ -16,6 +16,7 @@
 1. [marketplace/payment](/doc/marketplace/payment.md) - методы оплаты заказов
 1. [marketplace/buyer](/doc/marketplace/buyer.md) - методы для покупателя
 1. [marketplace/seller](/doc/marketplace/seller.md) - методы для продавца
+1. [marketplace/search](/doc/marketplace/search.md) - поиск
 
 ## Сервер
 сервер:  https://api.findinamika.com/api/
