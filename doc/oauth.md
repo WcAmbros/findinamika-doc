@@ -17,7 +17,7 @@
     }
 ```
 
-#### AUTH #### GET:/api/oauth/vk/link/
+#### AUTH GET:/api/oauth/vk/link/
 
 Привязывает пользователя vk к аккаунту
 
