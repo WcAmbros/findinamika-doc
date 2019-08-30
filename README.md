@@ -6,6 +6,8 @@
 1. [account](/doc/stellar/account.md)  -  методы для работы с аккаунтом
 1. [account-manager](/doc/account-manager/account-manager.md) -  методы для работы менеджера
 
+1. [oauth](/doc/oauth.md) -  методы авторизации через соцсервисы
+
 
 ## для работы с marketplace
 1. [marketplace/service](/doc/marketplace/service.md) - методы работы с сервисом
