@@ -17,7 +17,7 @@
     }
 ```
 
-#### AUTH GET:/api/oauth/vk/link/
+#### AUTH GET:/api/oauth/vk/link
 
 Привязывает пользователя vk к аккаунту
 
@@ -26,7 +26,27 @@
 _access_token_| токен доступа (альтернатива Authorization в headers)
 
 
-**example** `AUTH GET: /api/oauth/vk/link/?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMThiNjQ0M2IzNjU3MTRkZmViMjUwZSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTY3MTYyMjk3LCJleHAiOjE1NjcyMDU0OTd9.k-NK72JXQdf51hy-rs8uK8KueL3oXOD-YJVeWaFy5Eo`
+**example** `AUTH GET: /api/oauth/vk/link?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMThiNjQ0M2IzNjU3MTRkZmViMjUwZSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTY3MTYyMjk3LCJleHAiOjE1NjcyMDU0OTd9.k-NK72JXQdf51hy-rs8uK8KueL3oXOD-YJVeWaFy5Eo`
+
+**response**
+```json
+    {
+          "success": true,
+          "message": "succesfull"
+    }
+```
+
+
+#### AUTH POST:/api/oauth/vk/check
+
+проверяет список id vk авторизованных всистеме
+
+Поле | Описание
+--- | ---
+_list_id_| список id; 
+
+
+**example** `AUTH POST: /api/oauth/vk/check`
 
 **response**
 ```json
