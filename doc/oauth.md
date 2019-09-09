@@ -52,7 +52,7 @@ _list_id_| список id;
 ```json
     {
           "success": true,
-          "message": {
+          "result": {
             "19225252":true,
             "19225253":false}
     }
