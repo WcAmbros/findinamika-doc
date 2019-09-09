@@ -46,14 +46,14 @@ _access_token_| токен доступа (альтернатива Authorizatio
 _list_id_| список id; 
 
 
-**example** `AUTH POST: /api/oauth/vk/check?list_id[0]=19225252,list_id[0]=19225253`
+**example** `AUTH POST: /api/oauth/vk/check?list_id[0]=19225252,list_id[1]=19225253`
 
 **response**
 ```json
     {
           "success": true,
           "result": {
-            "19225252":true,
+            "19225252":{"login": "stas"},
             "19225253":false}
     }
 ```
