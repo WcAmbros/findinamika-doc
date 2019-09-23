@@ -46,7 +46,7 @@ _access_token_| токен доступа (альтернатива Authorizatio
 _list_id_| список id; 
 
 
-**example** `AUTH POST: /api/oauth/vk/isset?list_id[0]=19225252,list_id[1]=19225253`
+**example** `AUTH POST: /api/oauth/vk/isset`
 
 **response**
 ```json
