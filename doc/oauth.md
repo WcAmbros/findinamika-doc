@@ -52,8 +52,16 @@ _list_id_| список id;
 ```json
     {
           "success": true,
-          "result": {
-            "19225252":{"login": "stas"},
-            "19225253":false}
+          "result": [
+                {
+                  "isset": true,
+                  "id": "id19225252",
+                  "login": "stas"
+                },
+                {
+                  "isset": false,
+                  "id": "id244198430"
+                }          
+            ]
     }
 ```
