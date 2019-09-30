@@ -166,3 +166,126 @@ _verifyCode_| String| verify code
   "message": "send new password to email"
 }
 ```
+
+####  AUTH GET:/api/user/bank_details/
+
+Получение сведений о банковских реквизитах
+
+
+**example** `AUTH GET:/api.findinamika.com/api/user/bank_details`
+
+**response**
+```json
+{
+  "success": true,
+  "bank_details": {
+      "account_number": "40702810890480001347",
+      "BIC": "044030790",
+      "INN": "7811378050",
+      "KPP": "781301001",
+      "organization": "АО \"ТЕХНОПАРК САНКТ-ПЕТЕРБУРГА\""
+    "IBAN":"",
+    "SWIFT":"SABRRUMM" 
+  }
+}
+```
+
+####  AUTH POST:/api/user/bank_details/
+
+Добавление сведений о банковских реквизитах
+
+Поле | Тип| Описание
+--- | --- | ---
+_account_number_| String| номер счета
+_BIC_| String| БИК банка
+_INN_| String| ИНН
+_KPP_| String| КПП
+_IBAN_| String| IBAN
+_SWIFT_| String| SWIFT
+_organization_| String| наименование организации
+
+**example** `AUTH POST:/api.findinamika.com/api/user/bank_details`
+
+**response**
+```json
+{
+  "success": true,
+  "bank_details": {
+      "account_number": "40702810890480001347",
+      "BIC": "044030790",
+      "INN": "7811378050",
+      "KPP": "781301001",
+      "organization": "АО \"ТЕХНОПАРК САНКТ-ПЕТЕРБУРГА\""
+    "IBAN":"",
+    "SWIFT":"SABRRUMM" 
+  }
+}
+```
+
+####  AUTH PUT:/api/user/bank_details/
+
+Обновление сведений о банковских реквизитах
+
+Поле | Тип| Описание
+--- | --- | ---
+_account_number_| String| номер счета
+_BIC_| String| БИК банка
+_INN_| String| ИНН
+_KPP_| String| КПП
+_IBAN_| String| IBAN
+_SWIFT_| String| SWIFT
+_organization_| String| наименование организации
+
+**example** `AUTH POST:/api.findinamika.com/api/user/bank_details`
+
+**response**
+```json
+{
+  "success": true,
+  "bank_details": {
+      "account_number": "40702810890480001347",
+      "BIC": "044030790",
+      "INN": "7811378050",
+      "KPP": "781301001",
+      "organization": "АО \"ТЕХНОПАРК САНКТ-ПЕТЕРБУРГА\""
+    "IBAN":"",
+    "SWIFT":"SABRRUMM" 
+  }
+}
+```
+
+####  AUTH PUT:/api/user/bank_details/
+
+Обновление сведений о банковских реквизитах
+
+Поле | Тип| Описание
+--- | --- | ---
+_account_number_| String| номер счета
+_BIC_| String| БИК банка
+_INN_| String| ИНН
+_KPP_| String| КПП
+_IBAN_| String| IBAN
+_SWIFT_| String| SWIFT
+_organization_| String| наименование организации
+
+**example** `AUTH PUT:/api.findinamika.com/api/user/bank_details`
+
+**response**
+```json
+{
+  "success": true
+}
+```
+
+####  AUTH DELETE:/api/user/bank_details/
+
+Удаление сведений о банковских реквизитах
+
+**example** `AUTH DETELE:/api.findinamika.com/api/user/bank_details`
+
+**response**
+```json
+{
+  "success": true
+}
+```
