@@ -20,8 +20,15 @@
 1. [marketplace/seller](/doc/marketplace/seller.md) - методы для продавца
 1. [marketplace/search](/doc/marketplace/search.md) - поиск
 
+
+## сокеты
+1. [websocket/notice](/doc/websocket/notice.md) - методы работы с сокетом уведомлений
+
 ## Сервер
 сервер:  https://api.findinamika.com/api/
+
+## Сервер socket
+сервер:  wss://api.findinamika.com/
 
 
 ## Запросы
