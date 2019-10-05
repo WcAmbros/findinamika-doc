@@ -28,11 +28,21 @@ _access_token_| токен доступа (альтернатива Authorizatio
 
 **example** `AUTH GET: /api/oauth/vk/link?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMThiNjQ0M2IzNjU3MTRkZmViMjUwZSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTY3MTYyMjk3LCJleHAiOjE1NjcyMDU0OTd9.k-NK72JXQdf51hy-rs8uK8KueL3oXOD-YJVeWaFy5Eo`
 
+#### AUTH GET:/api/oauth/vk/unlink
+
+Удаляет запись привязки пользователя vk к аккаунту
+
+Поле | Описание
+--- | ---
+_access_token_| токен доступа (альтернатива Authorization в headers)
+
+
+**example** `AUTH GET: /api/oauth/vk/unlink?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMThiNjQ0M2IzNjU3MTRkZmViMjUwZSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTY3MTYyMjk3LCJleHAiOjE1NjcyMDU0OTd9.k-NK72JXQdf51hy-rs8uK8KueL3oXOD-YJVeWaFy5Eo`
+
 **response**
 ```json
     {
-          "success": true,
-          "message": "succesfull"
+          "success": true
     }
 ```
 
