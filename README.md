@@ -2,11 +2,11 @@
 #API методов
 
 1. [user](/doc/profile/user.md) -  регистрация и авторизация пользователя
-1. [anchor](/doc/stellar/anchor.md)  - работа для анкоров (схож с аккаунтом)
 1. [account](/doc/stellar/account.md)  -  методы для работы с аккаунтом
+<!--1. [anchor](/doc/stellar/anchor.md)  - работа для анкоров (схож с аккаунтом)
 
 1. [oauth](/doc/oauth.md) -  методы авторизации через соцсервисы
-
+-->
 
 ## для работы с marketplace
 1. [marketplace/service](/doc/marketplace/service.md) - методы работы с сервисом
@@ -19,10 +19,10 @@
 1. [marketplace/seller](/doc/marketplace/seller.md) - методы для продавца
 1. [marketplace/search](/doc/marketplace/search.md) - поиск
 
-
+<!--
 ## сокеты
 1. [websocket/notice](/doc/websocket/notice.md) - методы работы с сокетом уведомлений
-
+-->
 ## Сервер
 сервер:  https://api.findinamika.com/api/
 
