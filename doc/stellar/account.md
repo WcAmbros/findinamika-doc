@@ -22,14 +22,18 @@
 #### AUTH POST:/api/account/trustline/:asset_code/
 Добавляет актив в баланс, создав доверительную линию эмитентом(анкором)
 
-**example** `AUTH POST:/api/account/trustline/RUB`
+**example**
+```http request
+POST /api/account/trustline/USD
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
 
+```
 **response**
 ```json
-{"success":true,
-"ledger":867273,
-"hash":"c9e237bff67fc7c7f2bcc1ff4c2f5703e843bd8ce6627ab426843afca4fae0e1",
-"result_xdr":"AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAAGAAAAAAAAAAA="
+{
+  "success": true,
+  "message": "confirm"
 }
 ```
 #### AUTH POST:/api/account/payment/
@@ -37,92 +41,105 @@
 
 Поле | Описание
 --- | ---
-_to_| адресат: `user1` или `GDJFEBSTPOMTLDVLRRLW37PFUST423KJCRNGG2SUJ6FABHEU5R3TO2V6`
+_to_| адресат: `user1`
 _currency_| валюта
 _amount_| кол-во 
 _memo_| комментарий
 
-**example** `AUTH POST:/api/account/payment/?to=user1&currency=RUB&amount=1`
+**example**
+```http request
+POST /api/account/payment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
 
-**response**
-```json
-{"success":true,
-"ledger":867434,
-"hash":"3c3b7b4e73139a18b8afef6c41e3619312e157fc7502a7e0de6b10fce76fb972",
-"result_xdr":"AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAA="
+{
+  "to":"stas",
+  "currency":"RUB",
+  "amount":3,
+  "memo":"тест 3"
 }
 ```
 
-#### AUTH POST:/api/account/payment-path/
-Производит передачу с конвертацией в желаемый актив на указанный аккаунт
-
-Поле | Описание
---- | ---
-_to_| адресат: `user1` или `GDJFEBSTPOMTLDVLRRLW37PFUST423KJCRNGG2SUJ6FABHEU5R3TO2V6`
-_currency_| валюта
-_amount_| кол-во 
-_source_currency_| исходная валюта, которую нужно конверитовать
-_memo_| комментарий
-
-**example** `AUTH POST:/api/account/payment-path/?to=user1&currency=USD&amount=1&source_currency=RUB`
-
 **response**
 ```json
-{"success":true,
-"ledger":867621,
-"hash":"f10f944347488230fac76b3fa1ce227c75e088ed9391289cb1cef0e35efbf8dc",
-"result_xdr":"AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAEAAAAA/o6i16WomNtFuOw2IY2da+3IO8FCTsvyMzc7WalVos0AAAAAAAB2fgAAAAFVU0QAAAAAAP6OotelqJjbRbjsNiGNnWvtyDvBQk7L8jM3O1mpVaLNAAAAAACYloAAAAABUlVCAAAAAAA8+L8udhkGDa9OQc9NMaEueaIaGTd6PZ3N8H+GqdnyLgAAAAAnTEWwAAAAANJSBlN7mTWOq4xXbf3lpKfNbUkUWmNqVE+KAJyU7Hc3AAAAAVVTRAAAAAAA/o6i16WomNtFuOw2IY2da+3IO8FCTsvyMzc7WalVos0AAAAAAJiWgAAAAAA="
+{
+  "success": true,
+  "hash": "fec49347df0dc79417b9956b082d094aee6c412cd06a020c7c92153462b04551",
+  "result_xdr": "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAA=",
+  "ledger": 28850644
 }
 ```
 
 #### AUTH GET:/api/account/history/destinations
 Возвращает список кому перечислял
 
+**example**
+```http request
+GET /api/account/history/destinations
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
+
+```
 **response**
 ```json
-{"success":true,
-"destinations":[
-    {"name":"user2",
-    "publicKey":"GBNCO6OZHOHLD737QBO5LXQUCL2CFJ5FOLW6YQ53CE77CDLOVZLIWALG",
-    "last_operation":{
-        "hash":"d9b6c5cdf99ea0b0226496c4d587df4a1a6e406d65b450c6b34ce0bf6802103a",
-        "created_at":"2018-11-29T10:58:02Z",
-        "type":"payment"
-        }
-    }]
+{
+  "success": true,
+  "destinations": [
+    {
+      "name": "stas",
+      "publicKey": "GBB3COLZTGX2HLMOLXS7HN6EMKVAX465TKRHHL4UJRFVR6PBXH2DWUOO",
+      "last_operation": {
+        "hash": "fec49347df0dc79417b9956b082d094aee6c412cd06a020c7c92153462b04551",
+        "created_at": "2020-03-25T06:52:07Z",
+        "type": "payment"
+      }
+    }
+  ]
 }
 ```
 
 #### AUTH GET:/api/account/history/payments
 Возвращает историю транзакций
 
+**example**
+```http request
+GET /api/account/history/payments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
+
+```
+
 **response**
 ```json
 {"success":true,
 "payments":[
-{"id":"3726403820331009",
-"type":"path_payment",
-"created_at":"2018-11-25T11:06:40Z",
-"transaction_hash":"f10f944347488230fac76b3fa1ce227c75e088ed9391289cb1cef0e35efbf8dc",
-"asset_code":"USD",
-"asset_issuer":"GD7I5IWXUWUJRW2FXDWDMIMNTVV63SB3YFBE5S7SGM3TWWNJKWRM32VD",
-"from":"GBNCO6OZHOHLD737QBO5LXQUCL2CFJ5FOLW6YQ53CE77CDLOVZLIWALG",
-"to":"GDJFEBSTPOMTLDVLRRLW37PFUST423KJCRNGG2SUJ6FABHEU5R3TO2V6",
-"amount":"1.0000000",
-"source_amount":"65.9310000",
-"source_asset_code":"RUB",
-"source_asset_issuer":"GA6PRPZOOYMQMDNPJZA46TJRUEXHTIQ2DE3XUPM5ZXYH7BVJ3HZC5TOB",
-"receive_info":{"name":"user1"}
-},
-{"id":"3725600661442561",
-"type":"payment",
-"created_at":"2018-11-25T10:49:44Z",
-"transaction_hash":"3c3b7b4e73139a18b8afef6c41e3619312e157fc7502a7e0de6b10fce76fb972",
-"asset_code":"RUB","asset_issuer":"GA6PRPZOOYMQMDNPJZA46TJRUEXHTIQ2DE3XUPM5ZXYH7BVJ3HZC5TOB",
-"from":"GBNCO6OZHOHLD737QBO5LXQUCL2CFJ5FOLW6YQ53CE77CDLOVZLIWALG",
-"to":"GDJFEBSTPOMTLDVLRRLW37PFUST423KJCRNGG2SUJ6FABHEU5R3TO2V6","amount":"1.0000000",
-"receive_info":{"name":"user1"}
-}
+{
+      "id": "123912572448903169",
+      "type": "payment",
+      "created_at": "2020-03-25T06:52:07Z",
+      "transaction_hash": "fec49347df0dc79417b9956b082d094aee6c412cd06a020c7c92153462b04551",
+      "asset_code": "RUB",
+      "asset_issuer": "GAKBQCCZJ4XA2RKDHKSYW6UETDQSVDY7BCWU3ULGAIQL6FVLOSD4ADXQ",
+      "from": "GDDH37TOQSLZBJNRMM4RRVRIPZMV7HTQHS3OEK7JJCCX7ZFFIDZHZ5ET",
+      "to": "GBB3COLZTGX2HLMOLXS7HN6EMKVAX465TKRHHL4UJRFVR6PBXH2DWUOO",
+      "amount": "3.0000000",
+      "extra": {
+        "sender": "5e7aeeb2b9335f1660656d33*findinamika.com",
+        "transaction": {
+          "sender_info": {
+            "email_address": "test@test.com",
+            "login": "user1",
+            "name": "Ivanov Ivan Ivanich"
+          },
+          "route": "5d109d65cd335c68ca399ef5",
+          "note": "",
+          "extra": "тест 3"
+        }
+      },
+      "receive_info": {
+        "name": "stas"
+      }
+    }
 ]}
 ```
 
