@@ -26,43 +26,67 @@ _allow_notice_| Boolean| Разрешение высылать уведомле�
 _allow_personal_data_| Boolean| Разрешение на обработку данных
 
 #### POST:/api/user/login
-Авторизует пользователя и возвращает _x-access-token_ на 24 часа. 
+Авторизует пользователя и возвращает  на 24 часа. 
 
 Поле | Описание
 --- | ---
 _login_| логин
 _password_| пароль
 
-**example** `POST:/api/user/login?login=user1&password=user1`
+**example** 
+```http request
+POST /api/user/login
+Content-Type: application/json
+
+{
+  "login":"user1",
+  "password":"user1"
+}
+```
 
 **response**
 ```json
-{"success":true,
-"message":"User authorized",
-"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZDM0MGI3MWY3ODRhNTQxNjVlMjQwZiIsImlhdCI6MTU0MzE3OTQwNSwiZXhwIjoxNTQzMjIyNjA1fQ.C3epos4edUbpN1Zt2pFV5avKwvQg-FddOQpekdrqAtI"
+{
+  "success": true,
+  "message": "User authorized",
+  "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODcwLCJleHAiOjE1ODUxNTgwNzB9.mQgLby6Aqd_WhjB2n0snvPwm2ZgJ8LXbVngnk1iINMg",
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODcwLCJleHAiOjE1ODUxNTgwNzB9.mQgLby6Aqd_WhjB2n0snvPwm2ZgJ8LXbVngnk1iINMg",
+  "token_type": "bearer"
 }
 ```
 
 #### POST:/api/user/signup
-Регистрирует пользователя и возвращает _x-access-token_ на 24 часа
+Регистрирует пользователя и возвращает на 24 часа
 
 Поле | Описание
 --- | ---
 _login_| логин
 _password_| пароль
 
-**example** `POST:/api/user/signup?login=users10&password=users10`
+**example**
+```http request
+POST /api/user/signup
+Content-Type: application/json
+
+{
+  "login":"user1",
+  "password":"user1"
+}
+```
 
 **response**
 ```json
-{"success":true,
-"message":"signup confirm",
-"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZmIwZDZmZWZkOTk1NTExZDkyOGRhYyIsImlhdCI6MTU0MzE3OTY0NSwiZXhwIjoxNTQzMjIyODQ1fQ.7LoQjZi2WvjhYa4MQs3dTLgG7ATJWXarM3GyDvHFTfo"
+{
+  "success": true,
+  "message": "User authorized",
+  "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc",
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc",
+  "token_type": "bearer"
 }
 ```
 
 #### AUTH GET:/api/user/logout
-Выход из системы, токен _x-access-token_ анулируется
+Выход из системы, токен  анулируется
 
 **response**
 ```json
@@ -70,14 +94,26 @@ _password_| пароль
 ```
 
 #### AUTH POST:/api/user/update
-Обновляет данные пользователя по _x-access-token_ токену
+Обновляет данные пользователя по токену
 Поля доступные для обновления описаны выше
 
-**example** `AUTH POST:/api/user/update?login=users10&password=users10`
+**example**
+```http request
+POST /api/user/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODcwLCJleHAiOjE1ODUxNTgwNzB9.mQgLby6Aqd_WhjB2n0snvPwm2ZgJ8LXbVngnk1iINMg
+
+{
+  "password":"user1"
+}
+```
 
 **response**
 ```json
-{"success":true,"message":"update profile"}
+{
+  "success": true,
+  "message": "update profile"
+}
 ```
 
 #### AUTH GET:/api/user/notice
@@ -135,14 +171,19 @@ _password_| пароль
 --- | --- | ---
 _email_address_| String| email
 
+**example**
+```http request
+POST /api/user/reset/verify-code
+Content-Type: application/json
 
-**example** `POST:/api.findinamika.com/api/user/reset/verify-code?email_address=admin@findinamika.com`
+{"email_address":"test@test.com"}
+```
 
 **response**
 ```json
 {
   "success": true,
-  "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMTA5ZDY1Y2QzMzVjNjhjYTM5OWVmMyIsImxvZ2luIjoic3RhcyIsImVtYWlsX2FkZHJlc3MiOiJ6YWhzODhAeWFuZGV4LnJ1IiwidmVyaWZ5Q29kZSI6IjcwMjA3NzciLCJleHBpcmVzIjoxODAsImlhdCI6MTU2NjMwMTg2NywiZXhwIjoxNTY2MzAyMDQ3fQ.UhfYBJNdLv-nXI50Z_s2Xd3ug_z-VJP-KEQKhsDUpn8",
+  "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsImxvZ2luIjoidXNlcjEiLCJlbWFpbF9hZGRyZXNzIjoidGVzdEB0ZXN0LmNvbSIsInZlcmlmeUNvZGUiOiIwNjgyMjg4IiwiZXhwaXJlcyI6MTgwLCJpYXQiOjE1ODUxMTU0NDEsImV4cCI6MTU4NTExNTYyMX0.SSWdifVlWBCcWNjijGobb5x0kF7-kIp55VaPjg5e40Q",
   "expires": 180
 }
 ```
@@ -156,8 +197,16 @@ _email_address_| String| email
 _resetToken_| String| token
 _verifyCode_| String| verify code 
 
+**example**
+```http request
+POST /api/user/reset/password
+Content-Type: application/json
 
-**example** `POST:/api.findinamika.com/api/user/reset/password?verifyCode=7020777&resetToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMTA5ZDY1Y2QzMzVjNjhjYTM5OWVmMyIsImxvZ2luIjoic3RhcyIsImVtYWlsX2FkZHJlc3MiOiJ6YWhzODhAeWFuZGV4LnJ1IiwidmVyaWZ5Q29kZSI6IjcwMjA3NzciLCJleHBpcmVzIjoxODAsImlhdCI6MTU2NjMwMTg2NywiZXhwIjoxNTY2MzAyMDQ3fQ.UhfYBJNdLv-nXI50Z_s2Xd3ug_z-VJP-KEQKhsDUpn8`
+{
+"verifyCode":7020777,
+"resetToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkMTA5ZDY1Y2QzMzVjNjhjYTM5OWVmMyIsImxvZ2luIjoic3RhcyIsImVtYWlsX2FkZHJlc3MiOiJ6YWhzODhAeWFuZGV4LnJ1IiwidmVyaWZ5Q29kZSI6IjcwMjA3NzciLCJleHBpcmVzIjoxODAsImlhdCI6MTU2NjMwMTg2NywiZXhwIjoxNTY2MzAyMDQ3fQ.UhfYBJNdLv-nXI50Z_s2Xd3ug_z-VJP-KEQKhsDUpn8"
+}
+```
 
 **response**
 ```json
@@ -172,7 +221,12 @@ _verifyCode_| String| verify code
 Получение сведений о банковских реквизитах
 
 
-**example** `AUTH GET:/api.findinamika.com/api/user/bank_details`
+**example**
+```http request
+GET /api/user/bank_details
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
+```
 
 **response**
 ```json
@@ -204,7 +258,22 @@ _IBAN_| String| IBAN
 _SWIFT_| String| SWIFT
 _organization_| String| наименование организации
 
-**example** `AUTH POST:/api.findinamika.com/api/user/bank_details`
+**example**
+```http request
+POST /api/user/bank_details
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
+
+{
+  "account_number": "40702810890480001347",
+  "BIC": "044030790",
+  "INN": "7811378050",
+  "KPP": "781301001",
+  "organization": "АО \"ТЕХНОПАРК САНКТ-ПЕТЕРБУРГА\"",
+  "IBAN":"",
+  "SWIFT":"SABRRUMM"
+}
+```
 
 **response**
 ```json
@@ -236,7 +305,22 @@ _IBAN_| String| IBAN
 _SWIFT_| String| SWIFT
 _organization_| String| наименование организации
 
-**example** `AUTH POST:/api.findinamika.com/api/user/bank_details`
+**example**
+```http request
+PUT /api/user/bank_details
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
+
+{
+  "account_number": "40702810890480001347",
+  "BIC": "044030790",
+  "INN": "7811378050",
+  "KPP": "781301001",
+  "organization": "АО \"ТЕХНОПАРК САНКТ-ПЕТЕРБУРГА\"",
+  "IBAN":"",
+  "SWIFT":"SABRRUMM"
+}
+```
 
 **response**
 ```json
@@ -251,29 +335,6 @@ _organization_| String| наименование организации
     "IBAN":"",
     "SWIFT":"SABRRUMM" 
   }
-}
-```
-
-####  AUTH PUT:/api/user/bank_details/
-
-Обновление сведений о банковских реквизитах
-
-Поле | Тип| Описание
---- | --- | ---
-_account_number_| String| номер счета
-_BIC_| String| БИК банка
-_INN_| String| ИНН
-_KPP_| String| КПП
-_IBAN_| String| IBAN
-_SWIFT_| String| SWIFT
-_organization_| String| наименование организации
-
-**example** `AUTH PUT:/api.findinamika.com/api/user/bank_details`
-
-**response**
-```json
-{
-  "success": true
 }
 ```
 
@@ -281,7 +342,13 @@ _organization_| String| наименование организации
 
 Удаление сведений о банковских реквизитах
 
-**example** `AUTH DETELE:/api.findinamika.com/api/user/bank_details`
+**example**
+```http request
+DETELE /api/user/bank_details
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
+
+```
 
 **response**
 ```json
