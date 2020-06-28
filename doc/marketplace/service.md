@@ -217,3 +217,63 @@ _space_| фильтр по space
   ]
 }
 ```
+
+#### GET:/api/marketplace/service/labels
+
+производит поиск по наименованию label
+
+Поле | Описание
+--- | ---
+_page_| страница
+_limit_| кол-во элементов на странице  
+_label_| поиск по label
+
+**example** `GET: /api/marketplace/service/labels?label=СейфНет`
+
+**response**
+```json
+{
+  "success": true,
+  "services": [
+    {
+      "image": {
+        "mimetype": "image/jpg"
+      },
+      "currency": "RUB",
+      "name": "Ad",
+      "price": 12,
+      "description": "AS",
+      "space": "Safenet",
+      "measure": "S",
+      "timestamp": "2020-06-23T14:23:44.868Z",
+      "obj_type": "Service",
+      "id": "5ef2107042645f025a925920",
+      "seller": {
+        "id": "5cee7bb251f9b1764286c394",
+        "login": "Sergey",
+        "first_name": "Сергей",
+        "last_name": "Фролов",
+        "country": "Россия",
+        "city": "Санкт-Петербург",
+        "address": "Кушелевская 9",
+        "email_address": "Sergey",
+        "avatar": {
+          "mimetype": "image/jpg",
+          "filename": "9a7c82fec0e19b3d51c62cf2cb7a362512fbf29615555f3c96d37be4f94a9872.jpg"
+        }
+      },
+      "label": {
+        "image": {
+          "mimetype": "image/jpg",
+          "filename": "3355687ce6d618bb0725edc0da4dbdb7e19f8382c93379985b15f050cea6a9b1.jpg"
+        },
+        "name": "Риц СейфНет",
+        "description": "Цифровая безопасность вашего бизнеса",
+        "user_id": "5cee7bb251f9b1764286c394",
+        "obj_type": "Label",
+        "id": "5d0aa185cd335c68ca399e79"
+      }
+    }
+]
+}
+```
