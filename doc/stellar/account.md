@@ -144,3 +144,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyY
 ```
 
 
+#### AUTH POST:/api/account/withdraw
+Вывод из системы на указанный яндекс-кошелек
+
+Поле | Описание
+--- | ---
+_to_| номер кошелька (строка)
+_amount_| кол-во 
+
+
+**example**
+```http request
+GET /api/account/history/payments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
+
+{
+  "to":"4100112700839835",
+  "amount":15
+}
+```
+
+
