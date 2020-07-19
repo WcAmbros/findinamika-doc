@@ -161,7 +161,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyY
 
 {
   "to":"4100112700839835",
-  "amount":15
+  "amount":3
 }
 ```
 
