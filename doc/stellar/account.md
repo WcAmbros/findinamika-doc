@@ -165,4 +165,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyY
 }
 ```
 
+**response**
 
+```json
+{
+  "success": true,
+  "payment_system": "Yandex Money",
+  "stellar_hash": "483602c4e2dfc36b4c987a4c6bb39e6afc638518f4b6264908f39850d8c11436",
+  "status": "success",
+  "to": "4100112700839835",
+  "amount": 3,
+  "credit_amount": 2.99
+}
+```
