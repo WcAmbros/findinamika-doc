@@ -155,7 +155,7 @@ _amount_| кол-во
 
 **example**
 ```http request
-GET /api/account/history/payments
+GET /api/account/withdraw
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2FlZWIyYjkzMzVmMTY2MDY1NmQzMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTg1MTE0ODA4LCJleHAiOjE1ODUxNTgwMDh9.2T60TxeY5mbPgbEj5DXTM01n5MQkkLm0DUZRU2x6EHc
 
