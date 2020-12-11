@@ -1,5 +1,5 @@
 
-#API методов
+# API методов
 
 1. [user](/doc/profile/user.md) -  регистрация и авторизация пользователя
 1. [account](/doc/stellar/account.md)  -  методы для работы с аккаунтом
